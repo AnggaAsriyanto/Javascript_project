@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --back-color: #f0f0f0;
+    transition: 0.7s ease;
+}
+
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --back-color: #555;
+    transition: 0.7s ease;
+}
+
+html.dark {
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.toggle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.toggle:active {
+    transform: scale(0.98);
+}
+
+.toggle:focus {
+    outline: none;
+}
+
+.clock-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.clock {
+    position: relative;
+    width: 225px;
+    height: 225px;
+    background-color: var(--back-color);
+    border-radius: 50%;
+}
+
+.needle {
+    position: absolute;
+    background-color: var(--primary-color);
+    height: 65px;
+    width: 3px;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0);
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    width: 2.7px;
+    background-color: #e74c3c;
+}
+
+.center-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #e74c3c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.center-point::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.time {
+    font-size: 60px;
+}
+
+.date {
+    font-size: 14px;
+    color: #aaa;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 19px;
+    height: 19px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    transition: all 0.5s ease-in;
+}
+
+.num {
+    position: absolute;
+    font-size: 12px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.num.twelve {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.num.three {
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.num.six {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.num.nine {
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}

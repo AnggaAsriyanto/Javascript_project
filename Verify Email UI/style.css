@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fbfcfe;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    background-color: #fff;
+    text-align: center;
+    border: 3px #000 solid;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.code-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    margin: 0 20px;
+}
+
+.code {
+    height: 120px;
+    width: 100px;
+    border: 1px solid #eee;
+    margin: 1%;
+    font-size: 75px;
+    border-radius: 5px;
+    text-align: center;
+    outline-color: rgb(156, 156, 250);
+    -moz-appearance: textfield;
+}
+
+.code:valid {
+    border-color: #3498db;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.25);
+}
+
+.info {
+    background-color: #eaeaea;
+    display: inline-block;
+    max-width: 400px;
+    line-height: 20px;
+    padding: 10px;
+    color: #777;
+    border-radius: 5px;
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@media(max-width: 600px) {
+    .container {
+        margin: 30px;
+    }
+    .container p br {
+        display: none;
+    }
+    .code-container {
+        flex-wrap: wrap;
+    }
+    .code {
+        font-size: 50px;
+        height: 90px;
+    }
+}
